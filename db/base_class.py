@@ -5,6 +5,8 @@ from sqlalchemy.ext.declarative import as_declarative,declared_attr
 class Base:
     id:Any
     __name__:str
+    
+    @declared_attr
     def __tablename__(cls)->str:
         # it will return class name as table name for all the classes which inherites Base class
         return cls.__name__.lower()
